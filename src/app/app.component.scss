@@ -1,6 +1,12 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
     .route-container {
-        padding: 20px 10vw;
+        padding: 20px 20vw;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .route-container {
+        padding: 20px 15vw;
     }
 }
 

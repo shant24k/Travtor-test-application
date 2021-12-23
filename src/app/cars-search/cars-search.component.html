@@ -1,8 +1,8 @@
 <div class="car-search">
 <form novalidate [formGroup]="myform">
     <div class="mb-3 row">
-        <label for="pickUpLocation" class="col-12 col-sm-2 col-form-label">{{'carSearch.pickUpLocation' | translate}}</label>
-        <div class="col-12 col-sm-10">
+        <label for="pickUpLocation" class="col-12 col-sm-4 col-form-label">{{'carSearch.pickUpLocation' | translate}}</label>
+        <div class="col-12 col-sm-8">
             <input type="text" class="form-control" formControlName="pickUpLocation" id="pickUpLocation">
         </div>
     </div>
@@ -30,8 +30,8 @@
     </div>
 
     <div class="mb-3 row">
-        <label for="ageOfDriver" class="col-12 col-sm-2 col-form-label">{{'carSearch.ageOfDriver' | translate}}</label>
-        <div class="col-12 col-sm-10">
+        <label for="ageOfDriver" class="col-12 col-sm-4 col-form-label">{{'carSearch.ageOfDriver' | translate}}</label>
+        <div class="col-12 col-sm-8">
             <select class="form-select" aria-label="Default select example" formControlName="ageOfDriver" id="ageOfDriver">
         <option value="1-24">1-24</option>
         <option value="25+">25+</option>
@@ -42,4 +42,7 @@
         <button class="btn btn-primary" type="button" [disabled]="!myform.valid" (click)="getCarsResults()">{{'carSearch.searchRentalCars' | translate}}</button>
     </div>
 </form>
+</div>
+<div class="spinner-container" *ngIf="showLoader">
+    <span class="spinner"></span>
 </div>

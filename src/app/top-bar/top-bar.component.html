@@ -1,43 +1,48 @@
-<div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
-<div class="offcanvas-header">
-    <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Menu</h6>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-</div>
-<div class="offcanvas-body px-0">
-    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
-        <li class="nav-item">
-            <a [routerLink]="['/']" class="nav-link text-truncate">
-                <i class="material-icons">home</i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.home' | translate}}</span>
-            </a>
-        </li>
-        <li>
-            <a [routerLink]="['/cars-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-            <i class="material-icons"> local_taxi </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.cars' | translate}}</span> </a>
-        </li>
-        <li>
-        <a [routerLink]="['/flights-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-        <i class="material-icons"> flight </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.flights' | translate}}</span> </a>
-        </li>
-        <li>
-        <a [routerLink]="['/hotels-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-        <i class="material-icons"> hotel </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.hotels' | translate}}</span> </a>
-        </li>
-        <li>
-        <a [routerLink]="['/cruises-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-        <i class="material-icons">directions_boat </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.cruises' | translate}}</span> </a>
-        </li>
-    </ul>
-</div>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header">
+        <h6 class="offcanvas-title d-block" id="offcanvas">Menu</h6>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start sidenav-menu" id="menu">
+            <li class="nav-item">
+                <a [routerLink]="['/']" class="nav-link text-truncate" data-bs-dismiss="offcanvas">
+                    <i class="material-icons">home</i><span class="ms-1 d-inline route-labels">{{'nav.home' |
+                        translate}}</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/cars-search']" data-bs-dismiss="offcanvas" class="nav-link text-truncate">
+                    <i class="material-icons"> local_taxi </i><span class="ms-1 d-inline route-labels">{{'nav.cars' |
+                        translate}}</span> </a>
+            </li>
+            <li>
+                <a [routerLink]="['/flights-search']" data-bs-dismiss="offcanvas" class="nav-link text-truncate">
+                    <i class="material-icons"> flight </i><span class="ms-1 d-inline route-labels">{{'nav.flights' |
+                        translate}}</span> </a>
+            </li>
+            <li>
+                <a [routerLink]="['/hotels-search']" data-bs-dismiss="offcanvas" class="nav-link text-truncate">
+                    <i class="material-icons"> hotel </i><span class="ms-1 d-inline route-labels">{{'nav.hotels' |
+                        translate}}</span> </a>
+            </li>
+            <li>
+                <a [routerLink]="['/cruises-search']" data-bs-dismiss="offcanvas" class="nav-link text-truncate">
+                    <i class="material-icons">directions_boat </i><span
+                        class="ms-1 d-inline route-labels">{{'nav.cruises' | translate}}</span> </a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <button class="button menu-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
-<i class="material-icons">menu</i>
+    <i class="material-icons">menu</i>
 </button>
 
 <!-- <a class="button"><i class="material-icons">menu</i></a> -->
 
 <a [routerLink]="['/']" class="app-heading">
-  <h2>Travtor</h2>
+    <h2>Travtor</h2>
 </a>
 
 <div class="lag-cart-cotainer">
@@ -46,18 +51,10 @@
             <span class="material-icons">language</span><span>{{selectedLang | uppercase}}</span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <li><button class="dropdown-item" type="button" (click)="updateLang('en')">{{'nav.english' | translate}}<span *ngIf="selectedLang === 'en'" class="material-icons">check</span></button></li>
-        <li><button class="dropdown-item" type="button" (click)="updateLang('es')">{{'nav.spanish' | translate}}<span *ngIf="selectedLang === 'es'" class="material-icons">check</span></button></li>
-        <li><button class="dropdown-item" type="button" (click)="updateLang('de')">{{'nav.german' | translate}}<span *ngIf="selectedLang === 'de'" class="material-icons">check</span></button></li>
+            <li><button class="dropdown-item" type="button" (click)="updateLang('en')">{{'nav.english' | translate}}<span *ngIf="selectedLang === 'en'" class="material-icons">check</span></button></li>
+            <li><button class="dropdown-item" type="button" (click)="updateLang('es')">{{'nav.spanish' | translate}}<span *ngIf="selectedLang === 'es'" class="material-icons">check</span></button></li>
+            <li><button class="dropdown-item" type="button" (click)="updateLang('de')">{{'nav.german' | translate}}<span *ngIf="selectedLang === 'de'" class="material-icons">check</span></button></li>
         </ul>
     </div>
     <a class="button shopping-cart"><i class="material-icons">shopping_cart</i></a>
 </div>
-
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->

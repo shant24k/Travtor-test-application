@@ -25,6 +25,7 @@ export class CarsSearchComponent implements OnInit {
   pickUpTime!: FormControl;
   dropOffTime!: FormControl;
   ageOfDriver!: FormControl;
+  showLoader: boolean = false;
 
 
   ngOnInit() {
@@ -55,12 +56,14 @@ export class CarsSearchComponent implements OnInit {
   }
 
   getCarsResults() {
+    this.showLoader = true;
     this.carsService.search().subscribe((response) => {
       if (response) {
         sessionStorage.setItem('selectedCar', JSON.stringify(this.myform.value));
         this.store.dispatch(new CarAddItemAction(this.myform.value));
         this.store.dispatch(new CarsAddItemAction(response));
-        this.router.navigate(['/cars-results'])
+        this.router.navigate(['/cars-results']);
+        this.showLoader = false;
       }
     });
   }

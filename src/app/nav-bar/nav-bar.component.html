@@ -14,8 +14,8 @@
   </li>
 </ul>
 <div *ngIf="selectedCar" class="car-search">
-  <div>{{selectedCar.pickUpLocation}}</div>
-  <div>
+  <div class="location-details">{{selectedCar.pickUpLocation}}</div>
+  <div class="date-details">
     <span>{{selectedCar.pickUpDate | date:'MMMM d'}}, {{selectedCar.pickUpTime}} - </span>
     <span>{{selectedCar.dropOffDate | date:'MMMM d'}}, {{selectedCar.dropOffTime}}</span>
   </div>
