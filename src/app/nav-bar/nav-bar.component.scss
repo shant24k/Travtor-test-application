@@ -1,0 +1,37 @@
+.nav .nav-item .active {
+    border-bottom: 3px solid var(--primary);
+    border-right: 0px;
+  }
+  .nav .nav-item .nav-link {
+    font-size: 14px;
+  }
+  .nav .nav-item .nav-link i {
+    vertical-align: top;
+    padding-right: 5px;
+    font-size: 20px;
+  }
+  .nav {
+    // max-width: 455px;
+    flex-wrap: nowrap;
+    max-height: 65px;
+    overflow: hidden;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .nav-tabs li {
+      width: 25%;
+    }
+   
+  }
+
+  .car-search {
+    text-align: center;
+    background-color: var(--secondary);
+    color: #FFF;
+  }
+
+  .results-found {
+    padding: 10px;
+    border: 1px solid gray;
+    background: #f4f4f4;
+  }

@@ -1,0 +1,87 @@
+<div *ngFor="let car of getCarItineraries?.carMockItineraries?.CarItineraries | orderBy : ObjPropName: OrderByType; let i = index;" class="car-details">
+<div class="row">
+    <div class="col-3 car-image">
+        <img src={{car.vehicle.image}} class="cars-image">
+    </div>
+    <div class="col-9 vehicle-section">
+        <h2>{{car.vehicle.type}}</h2>
+        <p>{{car.vehicle.name}}</p>
+        <p>
+            <span class="car-info">
+              <i class="material-icons">people</i>
+              <span class="specifications-info">{{car.vehicle.specifications.passengerCapacity}}</span>
+            </span>
+            <span class="car-info">
+              <i class="material-icons">shopping_bag</i>
+              <span class="specifications-info">{{car.vehicle.specifications.baggageCapacity}}</span>
+            </span>
+            <span class="car-info">
+              <i class="material-icons">speed</i>
+              <span *ngIf="car.unlimitedMileage" class="specifications-info specifications-info-mileage">Unlimited Mileage</span>
+            </span>
+        </p>
+    </div>
+</div>
+<div>
+    <p><span class="highlight">Free Cancellation</span> until {{car.cancellationDetails.freeCancellationEndDate | date: 'EEE, MMM d, y'}}</p>
+</div>
+<hr>
+<div>
+    <p><span class="highlight">{{car.fare.perDay | currency:'USD':'symbol'}}</span> avg/day</p>
+    <p><span>Total ({{totalDays}} days): {{car.fare.totalAmount | currency:'USD':'symbol'}}</span></p>
+</div>
+</div>
+<div class="sort-container">
+  <button type="button" class="sort-filter" data-bs-toggle="modal" data-bs-target="#sorteModal">Sort</button>
+  <button type="button" class="sort-filter">Filter</button>
+</div>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sorteModal">
+Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="sorteModal" tabindex="-1" aria-labelledby="sorteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="material-icons" data-bs-dismiss="modal" aria-label="Back" style="cursor: pointer;">arrow_back</span>
+        <h5 class="modal-title" id="modalHeading">Sort</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form novalidate [formGroup]="sortForm">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortByProp" id="price1" value="price-asc" formControlName="sortByProp">
+            <label class="form-check-label" for="price1">Price: lowest</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortByProp" id="price2" value="price-dsc" formControlName="sortByProp">
+            <label class="form-check-label" for="price2">Price: highest</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortByProp" id="company1" value="company-asc" formControlName="sortByProp">
+            <label class="form-check-label" for="company1">Rental Company: A to Z</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortByProp" id="company2" value="company-dsc" formControlName="sortByProp">
+            <label class="form-check-label" for="company2">Rental Company: Z to A</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortByProp" id="type1" value="type-asc" formControlName="sortByProp">
+            <label class="form-check-label" for="type1">Car Type: A to Z</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortByProp" id="type2" value="type-dsc" formControlName="sortByProp">
+            <label class="form-check-label" for="type2">Car Type: Z to A</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="applySort()">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="car-search">
+<form novalidate [formGroup]="myform">
+    <div class="mb-3 row">
+        <label for="pickUpLocation" class="col-12 col-sm-2 col-form-label">PICK-UP LOCATION</label>
+        <div class="col-12 col-sm-10">
+            <input type="text" class="form-control" formControlName="pickUpLocation" id="pickUpLocation">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-6 col-sm-6">
+            <label for="pickUpDate" class="col-form-label">PICK-UP DATE</label>
+            <input type="date" class="form-control" formControlName="pickUpDate" id="pickUpDate">
+        </div>
+        <div class="col-6 col-sm-6">
+            <label for="dropOffDate" class="col-form-label">DROP-OFF DATE</label>
+            <input type="date" class="form-control" formControlName="dropOffDate" id="dropOffDate">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-6 col-sm-6">
+            <label for="pickUpTime" class="col-form-label">PICK-UP TIME</label>
+            <input type="time" class="form-control" formControlName="pickUpTime" id="pickUpTime">
+        </div>
+        <div class="col-6 col-sm-6">
+            <label for="dropOffTime" class="col-form-label">DROP-OFF TIME</label>
+            <input type="time" class="form-control" formControlName="dropOffTime" id="dropOffTime">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="ageOfDriver" class="col-12 col-sm-2 col-form-label">AGE OF DRIVER</label>
+        <div class="col-12 col-sm-10">
+            <select class="form-select" aria-label="Default select example" formControlName="ageOfDriver" id="ageOfDriver">
+        <option value="1-24">1-24</option>
+        <option value="25+">25+</option>
+      </select>
+        </div>
+    </div>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="button" [disabled]="!myform.valid" (click)="getCarsResults()">Search Rental Cars</button>
+    </div>
+</form>
+</div>

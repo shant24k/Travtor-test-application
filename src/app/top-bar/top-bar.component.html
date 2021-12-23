@@ -1,0 +1,49 @@
+<div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+<div class="offcanvas-header">
+    <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Menu</h6>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body px-0">
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+        <li class="nav-item">
+            <a [routerLink]="['/']" class="nav-link text-truncate">
+                <i class="material-icons">home</i><span class="ms-1 d-none d-sm-inline route-labels">Home</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/']" data-bs-toggle="collapse" class="nav-link text-truncate">
+            <i class="material-icons"> local_taxi </i><span class="ms-1 d-none d-sm-inline route-labels">Cars</span> </a>
+        </li>
+        <li>
+        <a [routerLink]="['/flights-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
+        <i class="material-icons"> flight </i><span class="ms-1 d-none d-sm-inline route-labels">Flights</span> </a>
+        </li>
+        <li>
+        <a [routerLink]="['/hotels-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
+        <i class="material-icons"> hotel </i><span class="ms-1 d-none d-sm-inline route-labels">Hotels</span> </a>
+        </li>
+        <li>
+        <a [routerLink]="['/cruises-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
+        <i class="material-icons">directions_boat </i><span class="ms-1 d-none d-sm-inline route-labels">Cruises</span> </a>
+        </li>
+    </ul>
+</div>
+</div>
+
+<button class="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
+<i class="material-icons">menu</i>
+</button>
+
+<!-- <a class="button"><i class="material-icons">menu</i></a> -->
+
+<a [routerLink]="['/']">
+  <h2>Travtor</h2>
+</a>
+
+<a class="button"><i class="material-icons">shopping_cart</i></a>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

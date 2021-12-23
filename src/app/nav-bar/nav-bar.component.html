@@ -1,0 +1,25 @@
+<ul class="nav nav-tabs" *ngIf="!selectedCar">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" [ngClass]="{'active': url === '/cars-search' || url === '/'}"
+      [routerLink]="['/']"><i class="material-icons"> local_taxi </i>Cars</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/flights-search']" [ngClass]="{'active': url === '/flights-search'}"><i class="material-icons"> flight </i>Flights</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/hotels-search']" [ngClass]="{'active': url === '/hotels-search'}"><i class="material-icons"> hotel </i>Hotels</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/cruises-search']" [ngClass]="{'active': url === '/cruises-search'}"><i class="material-icons">directions_boat </i>Cruises</a>
+  </li>
+</ul>
+<div *ngIf="selectedCar" class="car-search">
+  <div>{{selectedCar.pickUpLocation}}</div>
+  <div>
+    <span>{{selectedCar.pickUpDate | date:'MMMM d'}}, {{selectedCar.pickUpTime}} - </span>
+    <span>{{selectedCar.dropOffDate | date:'MMMM d'}}, {{selectedCar.dropOffTime}}</span>
+  </div>
+</div>
+<div *ngIf="getCarItineraries?.carMockItineraries?.CarItineraries?.length">
+  <p class="results-found">{{getCarItineraries?.carMockItineraries?.CarItineraries?.length}} cars found</p>
+</div>

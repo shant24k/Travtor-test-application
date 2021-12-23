@@ -1,0 +1,87 @@
+
+.cars-image {
+  width: 100%;
+}
+
+.highlight {
+  color: green;
+}
+
+.car-details {
+  border: 1px solid white;
+  padding: 10px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+@media only screen and (min-width: 400px) {
+  .vehicle-section {
+    padding: 0 1.5em;
+  }
+}
+
+
+// .vehicle-section i {
+//   // font-size: 1.5em;
+// }
+
+.car-image {
+  align-self: center;
+}
+
+.specifications-info {
+  vertical-align: super;
+  padding-left: 1px;
+}
+
+@media only screen and (max-width: 500px) and (min-width: 360px) {
+  .specifications-info-mileage {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 359px) {
+  .specifications-info-mileage {
+    font-size: 0.61em;
+  }
+}
+
+.car-info {
+  padding-right: 1em;;
+}
+
+.sort-container {
+  width: fit-content;
+  position: fixed;
+  left: 50%;
+  bottom: 15%;
+  margin-left: -60px;
+
+}
+
+.sort-filter {
+  background-color: white;
+  color: rgb(27, 175, 233);
+  border: 1px solid white;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  display: inline-block;
+  font-weight: bold;
+}
+
+.form-check {
+  padding-bottom: 1.5em;
+  label {
+    padding-left: 1em;
+    display: inline-block;
+  }
+}
+
+.modal-title {
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+

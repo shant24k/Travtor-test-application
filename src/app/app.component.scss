@@ -1,0 +1,18 @@
+@media only screen and (min-width: 768px) {
+    .route-container {
+        padding: 20px 10vw;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+    .route-container {
+        padding: 10px 5vw;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 499px)  {
+    .route-container {
+        padding: 10px 10px;
+    }
+   
+}
