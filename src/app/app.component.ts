@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Travtor';
+  constructor(private translate: TranslateService) {
+    let lang = localStorage.getItem('lastSelectedLang');
+    let setLang;
+    if (lang) {
+      setLang = lang;
+    } else {
+      setLang = 'en';
+    }
+    translate.setDefaultLang(setLang);
+  }
 }

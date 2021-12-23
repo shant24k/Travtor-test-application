@@ -1,0 +1,40 @@
+{
+    "nav": {
+        "cars": "Coches",
+        "flights": "Flights",
+        "hotels": "Vuelos",
+        "cruises": "Cruceros",
+        "home": "Casa",
+        "english": "English",
+        "spanish": "Spanish",
+        "german": "German"
+    },
+    "carSearch": {
+        "pickUpLocation": "LUGAR DE RECOGIDA",
+        "pickUpDate": "FECHA DE RECOGIDA",
+        "dropOfDate": "FECHA DE ENTREGA",
+        "pickUpTime": "HORA DE RECOGIDA",
+        "dropOfTime": "HORA DE ENTREGA",
+        "ageOfDriver": "EDAD DEL CONDUCTOR",
+        "searchRentalCars": "Buscar coches de alquiler"
+    },
+    "carsResults": {
+        "unlimitedMileage": "Kilometraje ilimitado",
+        "freeCancellation": "Cancelación gratis",
+        "until": "hasta",
+        "farePerDay": "prom/día",
+        "total": "Total",
+        "days": "días",
+        "carsFound": "coches encontrados",
+        "sort": "Sort",
+        "filter": "Filter",
+        "sortPriceLowest": "Precio: más bajo",
+        "sortPriceHighest": "Precio: más alto",
+        "sortRentalCompanyAtoZ": "Empresa de alquiler: de la A a la Z",
+        "sortRentalCompanyZtoA": "Empresa de alquiler: Z a A",
+        "sortCarTypeAtoZ": "Tipo de coche: de la A a la Z",
+        "sortCarTypeZtoA": "Tipo de coche: Z a A",
+        "apply": "Solicitar",
+        "cancel": "Cancelar"
+    }
+}

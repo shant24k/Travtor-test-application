@@ -1,7 +1,7 @@
 <div class="car-search">
 <form novalidate [formGroup]="myform">
     <div class="mb-3 row">
-        <label for="pickUpLocation" class="col-12 col-sm-2 col-form-label">PICK-UP LOCATION</label>
+        <label for="pickUpLocation" class="col-12 col-sm-2 col-form-label">{{'carSearch.pickUpLocation' | translate}}</label>
         <div class="col-12 col-sm-10">
             <input type="text" class="form-control" formControlName="pickUpLocation" id="pickUpLocation">
         </div>
@@ -9,28 +9,28 @@
 
     <div class="mb-3 row">
         <div class="col-6 col-sm-6">
-            <label for="pickUpDate" class="col-form-label">PICK-UP DATE</label>
+            <label for="pickUpDate" class="col-form-label">{{'carSearch.pickUpDate' | translate}}</label>
             <input type="date" class="form-control" formControlName="pickUpDate" id="pickUpDate">
         </div>
         <div class="col-6 col-sm-6">
-            <label for="dropOffDate" class="col-form-label">DROP-OFF DATE</label>
+            <label for="dropOffDate" class="col-form-label">{{'carSearch.dropOfDate' | translate}}</label>
             <input type="date" class="form-control" formControlName="dropOffDate" id="dropOffDate">
         </div>
     </div>
 
     <div class="mb-3 row">
         <div class="col-6 col-sm-6">
-            <label for="pickUpTime" class="col-form-label">PICK-UP TIME</label>
+            <label for="pickUpTime" class="col-form-label">{{'carSearch.pickUpTime' | translate}}</label>
             <input type="time" class="form-control" formControlName="pickUpTime" id="pickUpTime">
         </div>
         <div class="col-6 col-sm-6">
-            <label for="dropOffTime" class="col-form-label">DROP-OFF TIME</label>
+            <label for="dropOffTime" class="col-form-label">{{'carSearch.dropOfTime' | translate}}</label>
             <input type="time" class="form-control" formControlName="dropOffTime" id="dropOffTime">
         </div>
     </div>
 
     <div class="mb-3 row">
-        <label for="ageOfDriver" class="col-12 col-sm-2 col-form-label">AGE OF DRIVER</label>
+        <label for="ageOfDriver" class="col-12 col-sm-2 col-form-label">{{'carSearch.ageOfDriver' | translate}}</label>
         <div class="col-12 col-sm-10">
             <select class="form-select" aria-label="Default select example" formControlName="ageOfDriver" id="ageOfDriver">
         <option value="1-24">1-24</option>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button" [disabled]="!myform.valid" (click)="getCarsResults()">Search Rental Cars</button>
+        <button class="btn btn-primary" type="button" [disabled]="!myform.valid" (click)="getCarsResults()">{{'carSearch.searchRentalCars' | translate}}</button>
     </div>
 </form>
 </div>

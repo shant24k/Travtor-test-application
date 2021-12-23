@@ -17,23 +17,23 @@
             </span>
             <span class="car-info">
               <i class="material-icons">speed</i>
-              <span *ngIf="car.unlimitedMileage" class="specifications-info specifications-info-mileage">Unlimited Mileage</span>
+              <span *ngIf="car.unlimitedMileage" class="specifications-info specifications-info-mileage">{{'carsResults.unlimitedMileage' | translate}}</span>
             </span>
         </p>
     </div>
 </div>
 <div>
-    <p><span class="highlight">Free Cancellation</span> until {{car.cancellationDetails.freeCancellationEndDate | date: 'EEE, MMM d, y'}}</p>
+    <p><span class="highlight">{{'carsResults.freeCancellation' | translate}}</span> {{'carsResults.until' | translate}} {{car.cancellationDetails.freeCancellationEndDate | date: 'EEE, MMM d, y'}}</p>
 </div>
 <hr>
 <div>
-    <p><span class="highlight">{{car.fare.perDay | currency:'USD':'symbol'}}</span> avg/day</p>
-    <p><span>Total ({{totalDays}} days): {{car.fare.totalAmount | currency:'USD':'symbol'}}</span></p>
+    <p><span class="highlight">{{car.fare.perDay | currency:'USD':'symbol'}}</span> {{'carsResults.avgPerDay' | translate}}</p>
+    <p><span>{{'carsResults.total' | translate}} ({{totalDays}} {{'carsResults.days' | translate}}): {{car.fare.totalAmount | currency:'USD':'symbol'}}</span></p>
 </div>
 </div>
 <div class="sort-container">
-  <button type="button" class="sort-filter" data-bs-toggle="modal" data-bs-target="#sorteModal">Sort</button>
-  <button type="button" class="sort-filter">Filter</button>
+  <button type="button" class="sort-filter" data-bs-toggle="modal" data-bs-target="#sorteModal">{{'carsResults.sort' | translate}}</button>
+  <button type="button" class="sort-filter">{{'carsResults.filter' | translate}}</button>
 </div>
 
 <!-- Button trigger modal -->
@@ -47,40 +47,40 @@ Launch demo modal
     <div class="modal-content">
       <div class="modal-header">
         <span class="material-icons" data-bs-dismiss="modal" aria-label="Back" style="cursor: pointer;">arrow_back</span>
-        <h5 class="modal-title" id="modalHeading">Sort</h5>
+        <h5 class="modal-title" id="modalHeading">{{'carsResults.sort' | translate}}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form novalidate [formGroup]="sortForm">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="sortByProp" id="price1" value="price-asc" formControlName="sortByProp">
-            <label class="form-check-label" for="price1">Price: lowest</label>
+            <label class="form-check-label" for="price1">{{'carsResults.sortPriceLowest' | translate}}</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="sortByProp" id="price2" value="price-dsc" formControlName="sortByProp">
-            <label class="form-check-label" for="price2">Price: highest</label>
+            <label class="form-check-label" for="price2">{{'carsResults.sortPriceHighest' | translate}}</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="sortByProp" id="company1" value="company-asc" formControlName="sortByProp">
-            <label class="form-check-label" for="company1">Rental Company: A to Z</label>
+            <label class="form-check-label" for="company1">{{'carsResults.sortRentalCompanyAtoZ' | translate}}</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="sortByProp" id="company2" value="company-dsc" formControlName="sortByProp">
-            <label class="form-check-label" for="company2">Rental Company: Z to A</label>
+            <label class="form-check-label" for="company2">{{'carsResults.sortRentalCompanyZtoA' | translate}}</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="sortByProp" id="type1" value="type-asc" formControlName="sortByProp">
-            <label class="form-check-label" for="type1">Car Type: A to Z</label>
+            <label class="form-check-label" for="type1">{{'carsResults.sortCarTypeAtoZ' | translate}}</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="sortByProp" id="type2" value="type-dsc" formControlName="sortByProp">
-            <label class="form-check-label" for="type2">Car Type: Z to A</label>
+            <label class="form-check-label" for="type2">{{'carsResults.sortCarTypeZtoA' | translate}}</label>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="applySort()">Apply</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'carsResults.cancel' | translate}}</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!sortByProp.value" (click)="applySort()">{{'carsResults.apply' | translate}}</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,40 @@
+{
+    "nav": {
+        "cars": "Cars",
+        "flights": "Flights",
+        "hotels": "Hotels",
+        "cruises": "Cruises",
+        "home": "Home",
+        "english": "English",
+        "spanish": "Spanish",
+        "german": "German"
+    },
+    "carSearch": {
+        "pickUpLocation": "PICK-UP LOCATION",
+        "pickUpDate": "PICK-UP DATE",
+        "dropOfDate": "DROP-OFF DATE",
+        "pickUpTime": "PICK-UP TIME",
+        "dropOfTime": "DROP-OFF TIME",
+        "ageOfDriver": "AGE OF DRIVER",
+        "searchRentalCars": "Search Rental Cars"
+    },
+    "carsResults": {
+        "unlimitedMileage": "Unlimited Mileage",
+        "freeCancellation": "Free Cancellation",
+        "until": "until",
+        "avgPerDay": "avg/day",
+        "total": "Total",
+        "days": "days",
+        "carsFound": "cars found",
+        "sort": "Sort",
+        "filter": "Filter",
+        "sortPriceLowest": "Price: lowest",
+        "sortPriceHighest": "Price: highest",
+        "sortRentalCompanyAtoZ": "Rental Company: A to Z",
+        "sortRentalCompanyZtoA": "Rental Company: Z to A",
+        "sortCarTypeAtoZ": "Car Type: A to Z",
+        "sortCarTypeZtoA": "Car Type: Z to A",
+        "apply": "Apply",
+        "cancel": "Cancel"
+    }
+}

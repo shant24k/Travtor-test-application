@@ -1,16 +1,16 @@
 <ul class="nav nav-tabs" *ngIf="!selectedCar">
   <li class="nav-item">
     <a class="nav-link" aria-current="page" [ngClass]="{'active': url === '/cars-search' || url === '/'}"
-      [routerLink]="['/']"><i class="material-icons"> local_taxi </i>Cars</a>
+      [routerLink]="['/']"><i class="material-icons"> local_taxi </i>{{'nav.cars' | translate}}</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/flights-search']" [ngClass]="{'active': url === '/flights-search'}"><i class="material-icons"> flight </i>Flights</a>
+    <a class="nav-link" [routerLink]="['/flights-search']" [ngClass]="{'active': url === '/flights-search'}"><i class="material-icons"> flight </i>{{'nav.flights' | translate}}</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/hotels-search']" [ngClass]="{'active': url === '/hotels-search'}"><i class="material-icons"> hotel </i>Hotels</a>
+    <a class="nav-link" [routerLink]="['/hotels-search']" [ngClass]="{'active': url === '/hotels-search'}"><i class="material-icons"> hotel </i>{{'nav.hotels' | translate}}</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/cruises-search']" [ngClass]="{'active': url === '/cruises-search'}"><i class="material-icons">directions_boat </i>Cruises</a>
+    <a class="nav-link" [routerLink]="['/cruises-search']" [ngClass]="{'active': url === '/cruises-search'}"><i class="material-icons">directions_boat </i>{{'nav.cruises' | translate}}</a>
   </li>
 </ul>
 <div *ngIf="selectedCar" class="car-search">
@@ -21,5 +21,5 @@
   </div>
 </div>
 <div *ngIf="getCarItineraries?.carMockItineraries?.CarItineraries?.length">
-  <p class="results-found">{{getCarItineraries?.carMockItineraries?.CarItineraries?.length}} cars found</p>
+  <p class="results-found">{{getCarItineraries?.carMockItineraries?.CarItineraries?.length}} {{'carsResults.carsFound' | translate}}</p>
 </div>

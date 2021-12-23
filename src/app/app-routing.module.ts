@@ -7,12 +7,13 @@ import { CruisesSearchComponent } from './cruises-search/cruises-search.componen
 import { CarsResultsComponent } from './cars-results/cars-results.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'cars-search', pathMatch: 'full' },
+  { path: '', redirectTo: '/cars-search', pathMatch: 'full' },
   { path: 'cars-search', component: CarsSearchComponent },
   { path: 'flights-search', component: FlightsSearchComponent },
   { path: 'hotels-search', component: HotelsSearchComponent },
   { path: 'cruises-search', component: CruisesSearchComponent },
-  { path: 'cars-results', component: CarsResultsComponent }
+  { path: 'cars-results', component: CarsResultsComponent },
+  { path: '**', redirectTo: '/cars-search', pathMatch: 'full' }
 ];
 
 @NgModule({

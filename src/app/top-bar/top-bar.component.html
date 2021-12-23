@@ -7,40 +7,54 @@
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
         <li class="nav-item">
             <a [routerLink]="['/']" class="nav-link text-truncate">
-                <i class="material-icons">home</i><span class="ms-1 d-none d-sm-inline route-labels">Home</span>
+                <i class="material-icons">home</i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.home' | translate}}</span>
             </a>
         </li>
         <li>
-            <a [routerLink]="['/']" data-bs-toggle="collapse" class="nav-link text-truncate">
-            <i class="material-icons"> local_taxi </i><span class="ms-1 d-none d-sm-inline route-labels">Cars</span> </a>
+            <a [routerLink]="['/cars-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
+            <i class="material-icons"> local_taxi </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.cars' | translate}}</span> </a>
         </li>
         <li>
         <a [routerLink]="['/flights-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-        <i class="material-icons"> flight </i><span class="ms-1 d-none d-sm-inline route-labels">Flights</span> </a>
+        <i class="material-icons"> flight </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.flights' | translate}}</span> </a>
         </li>
         <li>
         <a [routerLink]="['/hotels-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-        <i class="material-icons"> hotel </i><span class="ms-1 d-none d-sm-inline route-labels">Hotels</span> </a>
+        <i class="material-icons"> hotel </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.hotels' | translate}}</span> </a>
         </li>
         <li>
         <a [routerLink]="['/cruises-search']" data-bs-toggle="collapse" class="nav-link text-truncate">
-        <i class="material-icons">directions_boat </i><span class="ms-1 d-none d-sm-inline route-labels">Cruises</span> </a>
+        <i class="material-icons">directions_boat </i><span class="ms-1 d-none d-sm-inline route-labels">{{'nav.cruises' | translate}}</span> </a>
         </li>
     </ul>
 </div>
 </div>
 
-<button class="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
+<button class="button menu-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
 <i class="material-icons">menu</i>
 </button>
 
 <!-- <a class="button"><i class="material-icons">menu</i></a> -->
 
-<a [routerLink]="['/']">
+<a [routerLink]="['/']" class="app-heading">
   <h2>Travtor</h2>
 </a>
 
-<a class="button"><i class="material-icons">shopping_cart</i></a>
+<div class="lag-cart-cotainer">
+    <div class="dropdown lang-dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="material-icons">language</span><span>{{selectedLang | uppercase}}</span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><button class="dropdown-item" type="button" (click)="updateLang('en')">{{'nav.english' | translate}}<span *ngIf="selectedLang === 'en'" class="material-icons">check</span></button></li>
+        <li><button class="dropdown-item" type="button" (click)="updateLang('es')">{{'nav.spanish' | translate}}<span *ngIf="selectedLang === 'es'" class="material-icons">check</span></button></li>
+        <li><button class="dropdown-item" type="button" (click)="updateLang('de')">{{'nav.german' | translate}}<span *ngIf="selectedLang === 'de'" class="material-icons">check</span></button></li>
+        </ul>
+    </div>
+    <a class="button shopping-cart"><i class="material-icons">shopping_cart</i></a>
+</div>
+
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
