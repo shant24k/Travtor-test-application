@@ -17,8 +17,6 @@ export class CarsSearchComponent implements OnInit {
   constructor(private carsService: CarsService, private router: Router, private store: Store) { }
 
   myform!: FormGroup;
-  firstName!: FormControl;
-  lastName!: FormControl;
   pickUpLocation!: FormControl;
   pickUpDate!: FormControl;
   dropOffDate!: FormControl;
@@ -33,6 +31,7 @@ export class CarsSearchComponent implements OnInit {
     this.createForm();
     sessionStorage.removeItem('selectedCar');
     this.store.dispatch(new CarAddItemAction(null));
+    this.store.dispatch(new CarsAddItemAction(null));
   }
 
   createFormControls() {

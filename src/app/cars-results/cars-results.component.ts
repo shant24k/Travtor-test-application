@@ -42,7 +42,6 @@ export class CarsResultsComponent implements OnInit {
   totalDays: number = 23;
   sortByProp!: FormControl;
   sortForm!: FormGroup;
-  // carItem$: Observable<any>;
   constructor(private store: Store, private router: Router, private carsService: CarsService) { 
     this.store.pipe(select(getCarSearch)).subscribe((getCarSearch) => {
       this.selectedCar = getCarSearch;
@@ -77,6 +76,7 @@ export class CarsResultsComponent implements OnInit {
       let propArr = this.sortByProp.value.split('-');
       this.ObjPropName = getKeyValue(propertyMap, propArr[0]);
       this.OrderByType = getKeyValue(orderMap, propArr[1]);
+      this.sortForm.reset();
     }
   }
 

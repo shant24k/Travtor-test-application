@@ -38,7 +38,7 @@ describe('TopBarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('updateLang should call Translate service method', () => {
+  it('ngOnInit should call Translate service method', () => {
     spyOn(translateService, 'use');
     component.ngOnInit();
     expect(component.selectedLang).toEqual('en');
@@ -48,6 +48,14 @@ describe('TopBarComponent', () => {
     spyOn(translateService, 'use');
     component.updateLang('en');
     expect(translateService.use).toHaveBeenCalledWith('en');
+    localStorage.removeItem('lastSelectedLang');
+  });
+
+  it('ngOnInit should set lang from local storage', () => {
+    localStorage.setItem('lastSelectedLang', 'es');
+    spyOn(translateService, 'use');
+    component.ngOnInit();
+    expect(component.selectedLang).toEqual('es');
     localStorage.removeItem('lastSelectedLang');
   });
 });

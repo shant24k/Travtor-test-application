@@ -92,4 +92,20 @@ describe('CarsResultsComponent', () => {
       expect(component.OrderByType).toBeTrue();
     });
   }));
+
+  it('ngOnInit should initialise component', () => {
+    let selectedCar = {
+      pickUpLocation: 'Airport',
+      pickUpDate: '2021-12-30',
+      dropOffDate: '2022-01-01',
+      pickUpTime: '09:00',
+      dropOffTime: '19:00',
+      ageOfDriver: '25+'
+    };
+    sessionStorage.setItem('selectedCar', JSON.stringify(selectedCar));
+    spyOn(component, 'getCarsResults');
+    component.ngOnInit();
+    expect(component.getCarsResults).toHaveBeenCalled();
+    sessionStorage.removeItem('selectedCar');
+  });
 });

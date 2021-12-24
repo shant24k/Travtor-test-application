@@ -10,7 +10,7 @@ export class OrderByPipe implements PipeTransform {
       array = array.slice().sort((a: any, b: any) => {
         let ae;
         let be
-        if (orderField.indexOf('.')) {
+        if (orderField.indexOf('.') !== -1) {
           let fields = orderField.split('.');
           switch (fields.length) {
             case 2:
@@ -20,10 +20,6 @@ export class OrderByPipe implements PipeTransform {
             case 3:
               ae = a[fields[0]][fields[1]][fields[2]];
               be = b[fields[0]][fields[1]][fields[2]];
-              break;
-            case 4:
-              ae = a[fields[0]][fields[1]][fields[2]][fields[3]];
-              be = b[fields[0]][fields[1]][fields[2]][fields[3]];
               break;
           }
         } else {

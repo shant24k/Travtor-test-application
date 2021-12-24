@@ -46,9 +46,9 @@ Launch demo modal
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="material-icons" data-bs-dismiss="modal" aria-label="Back" style="cursor: pointer;">arrow_back</span>
+        <span class="material-icons" data-bs-dismiss="modal" aria-label="Back" style="cursor: pointer;" (click)="sortForm.reset()">arrow_back</span>
         <h5 class="modal-title" id="modalHeading">{{'carsResults.sort' | translate}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="sortForm.reset()"></button>
       </div>
       <div class="modal-body">
         <form novalidate [formGroup]="sortForm">
@@ -79,7 +79,7 @@ Launch demo modal
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'carsResults.cancel' | translate}}</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="sortForm.reset()">{{'carsResults.cancel' | translate}}</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!sortByProp.value" (click)="applySort()">{{'carsResults.apply' | translate}}</button>
       </div>
     </div>

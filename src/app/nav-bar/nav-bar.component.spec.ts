@@ -5,10 +5,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 // import { MockStore, getMockStore } from '@ngrx/store/testing';
 
 import { NavBarComponent } from './nav-bar.component';
+import { RouterEventService } from '../router-event.service';
+import { of } from 'rxjs';
 
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
   let fixture: ComponentFixture<NavBarComponent>;
+  let routerEventService: RouterEventService
   // let store: MockStore;
   // const initialState = { carSearch: null, carItineraries: null };
 
@@ -24,10 +27,12 @@ describe('NavBarComponent', () => {
           }
         })
       ],
-      declarations: [ NavBarComponent ]
+      declarations: [ NavBarComponent ],
+      providers: [ RouterEventService ]
     })
     .compileComponents();
     // store = getMockStore({ initialState });
+    routerEventService = TestBed.inject(RouterEventService);
   });
 
   beforeEach(() => {
@@ -38,5 +43,12 @@ describe('NavBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('ngOnInit should create', () => {
+    spyOn(routerEventService, 'subscribeToRouterEvent').and.returnValue(of({url: 'http://localhost:4200/car-search'}));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.url).toEqual('http://localhost:4200/car-search');
   });
 });

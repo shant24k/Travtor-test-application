@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getCarSearch, getCarItineraries } from '../store/store-selector';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
-
+import { RouterEventService } from '../router-event.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -15,7 +14,7 @@ export class NavBarComponent implements OnInit {
   getCarItineraries: any;
   url: any;
 
-  constructor(private store: Store, private router: Router) { 
+  constructor(private store: Store, private router: Router, private routerEventService: RouterEventService) { 
     this.store.pipe(select(getCarSearch)).subscribe((getCarSearch) => {
       this.selectedCar = getCarSearch;
     });
@@ -27,7 +26,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.selectedCar);
     console.log(this.getCarItineraries);
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
+    this.routerEventService.subscribeToRouterEvent().subscribe((event) => {
       if (event.url) {
         this.url = event.url;
       }
