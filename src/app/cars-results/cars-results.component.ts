@@ -73,7 +73,7 @@ export class CarsResultsComponent implements OnInit {
   }
 
   applySort() {
-    if (this.sortByProp) {
+    if (this.sortByProp.value) {
       let propArr = this.sortByProp.value.split('-');
       this.ObjPropName = getKeyValue(propertyMap, propArr[0]);
       this.OrderByType = getKeyValue(orderMap, propArr[1]);
