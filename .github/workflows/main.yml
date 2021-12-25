@@ -33,7 +33,7 @@ jobs:
       - name: npm dependencies
         run: npm install
       - name: Angular build
-        run: npm build
+        run: ng build
         # To run karma test cases
       - name: Karma Test
         run: npm test
