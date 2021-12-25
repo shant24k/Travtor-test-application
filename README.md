@@ -1,6 +1,6 @@
 # TravtorApp [![Netlify Status](https://api.netlify.com/api/v1/badges/2a368341-a59e-4bd0-8408-dbe2b1d26a13/deploy-status)](https://app.netlify.com/sites/gallant-clarke-28cac0/deploys) [![Tests-CI](https://github.com/shant24k/Travtor-test-application/actions/workflows/main.yml/badge.svg)](https://github.com/shant24k/Travtor-test-application/actions/workflows/main.yml)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2. Bootstarp 5 & CSS flexbox used to make his application responsive for all devices. It's Car Rental todo application built with mock data.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2. Bootstarp 5 & CSS flexbox used to make this application responsive for all devices. It's Car Rental todo application built with mock data.
 
 To run project online on stackblitz you can user URL: https://stackblitz.com/github/shant24k/Travtor-test-application 
 
@@ -11,6 +11,10 @@ This application integrated with two github pipelines Build & Test which checks 
 This application deployed on Netlify with host URL: https://gallant-clarke-28cac0.netlify.app 
 
 And also autodeployment is enabled for the main branch. So, that any successful commits to main branch will trigger the deployment and thanks to Netlify  gets publishd & live in few minutes.
+
+Deployment logs can be traced here: https://app.netlify.com/sites/gallant-clarke-28cac0/deploys
+
+For each commit github actions pipeline logs can be traced under Actions tab of this repository i.e. https://github.com/shant24k/Travtor-test-application/actions
 
 ## State Management (NgRX)
 
