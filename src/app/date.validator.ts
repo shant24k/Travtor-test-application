@@ -37,8 +37,8 @@ export function ValidatePickUpDropOffDate(fGroup: AbstractControl) {
     if (fGroup.get('pickUpDate')?.value ===  fGroup.get('dropOffDate')?.value && fGroup.get('pickUpTime')?.value && fGroup.get('dropOffTime')?.value) {
         let timzoneOffset = new Date().getTimezoneOffset() / 60;
         let easternHemisphere;
-        let hours = timzoneOffset.toString().split('.')[0];
-        let minutes;
+        let hours = '00';
+        let minutes = '00';
         if (timzoneOffset < 0) {
             timzoneOffset = timzoneOffset * -1;
             easternHemisphere = true;
@@ -47,8 +47,14 @@ export function ValidatePickUpDropOffDate(fGroup: AbstractControl) {
             const decimalPart = Number(timzoneOffset.toString().split('.')[1]);
             minutes = (decimalPart * 6).toString();
         }
-        if (timzoneOffset.toString().split('.')[0].length === 1) {
-            hours = '0' + timzoneOffset.toString().split('.')[0];
+        if (timzoneOffset.toString().indexOf('.') === -1) {
+            hours = timzoneOffset.toString();
+        }
+        if (timzoneOffset.toString().indexOf('.') !== -1) {
+           hours = timzoneOffset.toString().split('.')[0];
+        }
+        if (hours.length === 1) {
+            hours = '0' + hours;
         }
         const pickUpDateString = fGroup.get('pickUpDate')?.value + 'T' + fGroup.get('pickUpTime')?.value + ':00.000' + (easternHemisphere ? '+' : '-') + hours + ':' + minutes;
         const dropOffDateString = fGroup.get('dropOffDate')?.value + 'T' + fGroup.get('dropOffTime')?.value + ':00.000' + (easternHemisphere ? '+' : '-') + hours + ':' + minutes;
