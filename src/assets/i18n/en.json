@@ -12,11 +12,21 @@
     "carSearch": {
         "pickUpLocation": "PICK-UP LOCATION",
         "pickUpDate": "PICK-UP DATE",
-        "dropOfDate": "DROP-OFF DATE",
+        "dropOffDate": "DROP-OFF DATE",
         "pickUpTime": "PICK-UP TIME",
-        "dropOfTime": "DROP-OFF TIME",
+        "dropOffTime": "DROP-OFF TIME",
         "ageOfDriver": "AGE OF DRIVER",
-        "searchRentalCars": "Search Rental Cars"
+        "searchRentalCars": "Search Rental Cars",
+        "pickUpLocationRequired": "Pick-up location is required",
+        "pickUpDateRequired": "Pick-up date is required",
+        "dropOffDateRequired": "Drop-off date is required",
+        "pickUpTimeRequired": "Pick-up time is required",
+        "dropOffTimeRequired": "Drop-off time is required",
+        "ageOfDriverRequired": "Age of driver is required",
+        "enterValidDate": "Please enter valid date. ",
+        "pastDate": "Do not enter past date.",
+        "aheadOfFiveYearsInFuture": "Do not enter date more than 5 years in future.",
+        "enterValidPickUpDropOffDateCombination": "Drop off date can not be before pick up date."
     },
     "carsResults": {
         "unlimitedMileage": "Unlimited Mileage",
@@ -35,6 +45,8 @@
         "sortCarTypeAtoZ": "Car Type: A to Z",
         "sortCarTypeZtoA": "Car Type: Z to A",
         "apply": "Apply",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "close": "Close",
+        "back": "Back"
     }
 }

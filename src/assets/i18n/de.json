@@ -12,11 +12,21 @@
     "carSearch": {
         "pickUpLocation": "TREFFPUNKT",
         "pickUpDate": "ABHOLDATUM",
-        "dropOfDate": "ABGABEDATUM",
+        "dropOffDate": "ABGABEDATUM",
         "pickUpTime": "ABHOLZEIT",
-        "dropOfTime": "ABFAHRTSZEIT",
+        "dropOffTime": "ABFAHRTSZEIT",
         "ageOfDriver": "ALTER DES FAHRERS",
-        "searchRentalCars": "Mietwagen suchen"
+        "searchRentalCars": "Mietwagen suchen",
+        "pickUpLocationRequired": "Abholort ist erforderlich",
+        "pickUpDateRequired": "Abholtermin ist erforderlich",
+        "dropOffDateRequired": "Abgabetermin ist erforderlich",
+        "pickUpTimeRequired": "Abholzeit ist erforderlich",
+        "dropOffTimeRequired": "Bringzeit ist erforderlich",
+        "ageOfDriverRequired": "Alter des Fahrers ist erforderlich",
+        "enterValidDate": "Bitte gültiges Datum eingeben. ",
+        "pastDate": "Geben Sie kein vergangenes Datum ein.",
+        "aheadOfFiveYearsInFuture": "Geben Sie kein Datum ein, das länger als 5 Jahre in der Zukunft liegt.",
+        "enterValidPickUpDropOffDateCombination": "Das Abgabedatum kann nicht vor dem Abholdatum liegen."
     },
     "carsResults": {
         "unlimitedMileage": "Unbegrenzte Kilometer",
@@ -35,6 +45,8 @@
         "sortCarTypeAtoZ": "Autotyp: A bis Z",
         "sortCarTypeZtoA": "Autotyp: Z bis A",
         "apply": "Sich bewerben",
-        "cancel": "Abbrechen"
+        "cancel": "Abbrechen",
+        "close": "Nah dran",
+        "back": "Zurück"
     }
 }

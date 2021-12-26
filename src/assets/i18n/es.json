@@ -12,11 +12,21 @@
     "carSearch": {
         "pickUpLocation": "LUGAR DE RECOGIDA",
         "pickUpDate": "FECHA DE RECOGIDA",
-        "dropOfDate": "FECHA DE ENTREGA",
+        "dropOffDate": "FECHA DE ENTREGA",
         "pickUpTime": "HORA DE RECOGIDA",
-        "dropOfTime": "HORA DE ENTREGA",
+        "dropOffTime": "HORA DE ENTREGA",
         "ageOfDriver": "EDAD DEL CONDUCTOR",
-        "searchRentalCars": "Buscar coches de alquiler"
+        "searchRentalCars": "Buscar coches de alquiler",
+        "pickUpLocationRequired": "Se requiere un lugar de recogida",
+        "pickUpDateRequired": "Se requiere la fecha de recogida",
+        "dropOffDateRequired": "Se requiere la fecha de entrega",
+        "pickUpTimeRequired": "Se requiere hora de recogida",
+        "dropOffTimeRequired": "Se requiere tiempo de entrega",
+        "ageOfDriverRequired": "Se requiere la edad del conductor",
+        "enterValidDate": "Ingrese una fecha válida. ",
+        "pastDate": "No ingrese la fecha pasada.",
+        "aheadOfFiveYearsInFuture": "No ingrese una fecha de más de 5 años en el futuro.",
+        "enterValidPickUpDropOffDateCombination": "La fecha de entrega no puede ser anterior a la fecha de recogida."
     },
     "carsResults": {
         "unlimitedMileage": "Kilometraje ilimitado",
@@ -35,6 +45,8 @@
         "sortCarTypeAtoZ": "Tipo de coche: de la A a la Z",
         "sortCarTypeZtoA": "Tipo de coche: Z a A",
         "apply": "Solicitar",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "close": "Cerca",
+        "back": "atrás"
     }
 }

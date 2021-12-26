@@ -1,45 +1,74 @@
 <div class="car-search">
-<form novalidate [formGroup]="myform">
+<form novalidate [formGroup]="searchForm">
     <div class="mb-3 row">
         <label for="pickUpLocation" class="col-12 col-sm-4 col-form-label">{{'carSearch.pickUpLocation' | translate}}</label>
         <div class="col-12 col-sm-8">
-            <input type="text" class="form-control" formControlName="pickUpLocation" id="pickUpLocation">
+            <input type="text" class="form-control" attr.aria-label="{{'carSearch.pickUpLocation' | translate}}" formControlName="pickUpLocation" id="pickUpLocation" [ngClass]="{'is-invalid': pickUpLocation.errors && pickUpLocation.errors['required'] && (pickUpLocation.dirty || pickUpLocation.touched)}">
+            <div class="invalid-feedback" *ngIf="pickUpLocation.errors && (pickUpLocation.dirty || pickUpLocation.touched)">
+                <p *ngIf="pickUpLocation.errors['required']">{{'carSearch.pickUpLocationRequired' | translate}}</p>
+            </div>
         </div>
     </div>
 
     <div class="mb-3 row">
         <div class="col-6 col-sm-6">
             <label for="pickUpDate" class="col-form-label">{{'carSearch.pickUpDate' | translate}}</label>
-            <input type="date" class="form-control" formControlName="pickUpDate" id="pickUpDate">
+            <input type="date" class="form-control" attr.aria-label="{{'carSearch.pickUpDate' | translate}}" formControlName="pickUpDate" id="pickUpDate" [ngClass]="{'is-invalid': pickUpDate.errors && (pickUpDate.errors['required'] || pickUpDate.errors['pastDate'] || pickUpDate.errors['aheadOfFiveYearsInFuture']) && (pickUpDate.dirty || pickUpDate.touched)}">
+            <div class="invalid-feedback" *ngIf="pickUpDate.errors && (pickUpDate.dirty || pickUpDate.touched)">
+                <p *ngIf="pickUpDate.errors['required']">{{'carSearch.pickUpDateRequired' | translate}}</p>
+                <p *ngIf="pickUpDate.errors['pastDate'] || pickUpDate.errors['aheadOfFiveYearsInFuture']">
+                    <span>{{'carSearch.enterValidDate' | translate}}</span>
+                    <span *ngIf="pickUpDate.errors['pastDate']">{{'carSearch.pastDate' | translate}}</span>
+                    <span *ngIf="pickUpDate.errors['aheadOfFiveYearsInFuture']">{{'carSearch.enterValidDate' | translate}}</span>
+                </p>
+            </div>
         </div>
         <div class="col-6 col-sm-6">
-            <label for="dropOffDate" class="col-form-label">{{'carSearch.dropOfDate' | translate}}</label>
-            <input type="date" class="form-control" formControlName="dropOffDate" id="dropOffDate">
+            <label for="dropOffDate" class="col-form-label">{{'carSearch.dropOffDate' | translate}}</label>
+            <input type="date" class="form-control" attr.aria-label="{{'carSearch.dropOffDate' | translate}}" formControlName="dropOffDate" id="dropOffDate" [ngClass]="{'is-invalid': (dropOffDate.errors || searchForm.errors) && ((dropOffDate.errors && (dropOffDate.errors['required'] || dropOffDate.errors['pastDate'] || dropOffDate.errors['aheadOfFiveYearsInFuture'])) || (searchForm.errors && searchForm.errors['invalidPickUpDropOffCombination'])) && (dropOffDate.dirty || dropOffDate.touched)}">
+            <div class="invalid-feedback" *ngIf="(dropOffDate.errors || (searchForm.errors && searchForm.errors['invalidPickUpDropOffCombination'])) && (dropOffDate.dirty || dropOffDate.touched)">
+                <p *ngIf="dropOffDate.errors && dropOffDate.errors['required']">{{'carSearch.dropOffDateRequired' | translate}}</p>
+                <p *ngIf="(dropOffDate.errors && (dropOffDate.errors['pastDate'] || dropOffDate.errors['aheadOfFiveYearsInFuture'])) || (searchForm.errors && searchForm.errors['invalidPickUpDropOffCombination'])">
+                    <span>{{'carSearch.enterValidDate' | translate}}</span>
+                    <span *ngIf="dropOffDate.errors && dropOffDate.errors['pastDate']">{{'carSearch.pastDate' | translate}}</span>
+                    <span *ngIf="dropOffDate.errors && dropOffDate.errors['aheadOfFiveYearsInFuture']">{{'carSearch.enterValidDate' | translate}}</span>
+                    <span *ngIf="searchForm.errors && searchForm.errors['invalidPickUpDropOffCombination']">{{'carSearch.enterValidPickUpDropOffDateCombination' | translate}}</span>
+                </p>
+            </div>
         </div>
     </div>
 
     <div class="mb-3 row">
         <div class="col-6 col-sm-6">
             <label for="pickUpTime" class="col-form-label">{{'carSearch.pickUpTime' | translate}}</label>
-            <input type="time" class="form-control" formControlName="pickUpTime" id="pickUpTime">
+            <input type="time" class="form-control" attr.aria-label="{{'carSearch.pickUpTime' | translate}}" formControlName="pickUpTime" id="pickUpTime" [ngClass]="{'is-invalid': pickUpTime.errors && pickUpTime.errors['required'] && (pickUpTime.dirty || pickUpTime.touched)}">
+            <div class="invalid-feedback" *ngIf="pickUpTime.errors && (pickUpTime.dirty || pickUpTime.touched)">
+                <p *ngIf="pickUpTime.errors['required']">{{'carSearch.pickUpTimeRequired' | translate}}</p>
+            </div>
         </div>
         <div class="col-6 col-sm-6">
-            <label for="dropOffTime" class="col-form-label">{{'carSearch.dropOfTime' | translate}}</label>
-            <input type="time" class="form-control" formControlName="dropOffTime" id="dropOffTime">
+            <label for="dropOffTime" class="col-form-label">{{'carSearch.dropOffTime' | translate}}</label>
+            <input type="time" class="form-control" attr.aria-label="{{'carSearch.dropOffTime' | translate}}" formControlName="dropOffTime" id="dropOffTime" [ngClass]="{'is-invalid': dropOffTime.errors && dropOffTime.errors['required'] && (dropOffTime.dirty || dropOffTime.touched)}">
+            <div class="invalid-feedback" *ngIf="dropOffTime.errors && (dropOffTime.dirty || dropOffTime.touched)">
+                <p *ngIf="dropOffTime.errors['required']">{{'carSearch.dropOffTimeRequired' | translate}}</p>
+            </div>
         </div>
     </div>
 
     <div class="mb-3 row">
         <label for="ageOfDriver" class="col-12 col-sm-4 col-form-label">{{'carSearch.ageOfDriver' | translate}}</label>
         <div class="col-12 col-sm-8">
-            <select class="form-select" aria-label="Default select example" formControlName="ageOfDriver" id="ageOfDriver">
-        <option value="1-24">1-24</option>
-        <option value="25+">25+</option>
-      </select>
+            <select class="form-select" attr.aria-label="{{'carSearch.ageOfDriver' | translate}}" formControlName="ageOfDriver" id="ageOfDriver" [ngClass]="{'is-invalid': ageOfDriver.errors && ageOfDriver.errors['required'] && (ageOfDriver.dirty || ageOfDriver.touched)}">
+                <option value="1-24">1-24</option>
+                <option value="25+">25+</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="ageOfDriver.errors && (ageOfDriver.dirty || ageOfDriver.touched)">
+                <p *ngIf="ageOfDriver.errors['required']">{{'carSearch.ageOfDriverRequired' | translate}}</p>
+            </div>
         </div>
     </div>
     <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button" [disabled]="!myform.valid" (click)="getCarsResults()">{{'carSearch.searchRentalCars' | translate}}</button>
+        <button class="btn btn-primary" type="button" attr.aria-label="{{'carSearch.searchRentalCars' | translate}}" [disabled]="!searchForm.valid" (click)="getCarsResults()">{{'carSearch.searchRentalCars' | translate}}</button>
     </div>
 </form>
 </div>

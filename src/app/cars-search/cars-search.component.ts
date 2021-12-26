@@ -4,6 +4,7 @@ import { CarsService } from '../cars.service';
 import { Router } from '@angular/router';
 import { CarAddItemAction, CarsAddItemAction } from '../store/action';
 import { Store } from '@ngrx/store';
+import { ValidateDate, ValidatePickUpDropOffDate } from '../date.validator';
 
 @Component({
   selector: 'app-cars-search',
@@ -16,7 +17,7 @@ export class CarsSearchComponent implements OnInit {
 
   constructor(private carsService: CarsService, private router: Router, private store: Store) { }
 
-  myform!: FormGroup;
+  searchForm!: FormGroup;
   pickUpLocation!: FormControl;
   pickUpDate!: FormControl;
   dropOffDate!: FormControl;
@@ -36,30 +37,30 @@ export class CarsSearchComponent implements OnInit {
 
   createFormControls() {
     this.pickUpLocation = new FormControl('', Validators.required);
-    this.pickUpDate = new FormControl('', Validators.required);
-    this.dropOffDate = new FormControl('', Validators.required);
+    this.pickUpDate = new FormControl('', [Validators.required, ValidateDate]);
+    this.dropOffDate = new FormControl('', [Validators.required, ValidateDate]);
     this.pickUpTime = new FormControl('', Validators.required);
     this.dropOffTime = new FormControl('', Validators.required);
     this.ageOfDriver = new FormControl('', Validators.required);
   }
 
   createForm() {
-    this.myform = new FormGroup({
+    this.searchForm = new FormGroup({
       pickUpLocation: this.pickUpLocation,
       pickUpDate: this.pickUpDate,
       dropOffDate: this.dropOffDate,
       pickUpTime: this.pickUpTime,
       dropOffTime: this.dropOffTime,
       ageOfDriver: this.ageOfDriver,
-    });
+    }, [ValidatePickUpDropOffDate]);
   }
 
   getCarsResults() {
     this.showLoader = true;
     this.carsService.search().subscribe((response) => {
       if (response) {
-        sessionStorage.setItem('selectedCar', JSON.stringify(this.myform.value));
-        this.store.dispatch(new CarAddItemAction(this.myform.value));
+        sessionStorage.setItem('selectedCar', JSON.stringify(this.searchForm.value));
+        this.store.dispatch(new CarAddItemAction(this.searchForm.value));
         this.store.dispatch(new CarsAddItemAction(response));
         this.router.navigate(['/cars-results']);
         this.showLoader = false;
