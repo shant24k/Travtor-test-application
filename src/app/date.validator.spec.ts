@@ -61,8 +61,8 @@ describe('ValidatePickUpDropOffDate', () => {
     });
 
     it('should return { invalidPickUpDropOffCombination: true } if pick up date is later than drop off 2', () => {
-        const validPickUpDateStr = new Date().getFullYear() + 2 + '-01-01';
-        const validDropOffDateStr = new Date().getFullYear() + 2 + '-01-01';
+        const validPickUpDateStr = new Date().getFullYear() + 2 + '-05-05';
+        const validDropOffDateStr = new Date().getFullYear() + 2 + '-05-05';
         const pickUpTime = "17:00";
         const dropOffTime = "05:00";
         formGroup.setValue({

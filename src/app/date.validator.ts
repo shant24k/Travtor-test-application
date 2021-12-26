@@ -52,6 +52,8 @@ export function ValidatePickUpDropOffDate(fGroup: AbstractControl) {
         }
         const pickUpDateString = fGroup.get('pickUpDate')?.value + 'T' + fGroup.get('pickUpTime')?.value + ':00.000' + (easternHemisphere ? '+' : '-') + hours + ':' + minutes;
         const dropOffDateString = fGroup.get('dropOffDate')?.value + 'T' + fGroup.get('dropOffTime')?.value + ':00.000' + (easternHemisphere ? '+' : '-') + hours + ':' + minutes;
+        console.log('pickUpDateString: ', pickUpDateString);
+        console.log('dropOffDateString: ', dropOffDateString);
         if (new Date(pickUpDateString).getTime() > new Date(dropOffDateString).getTime()) {
             return { invalidPickUpDropOffCombination: true };
         }
