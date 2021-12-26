@@ -44,4 +44,12 @@ describe('AppComponent', () => {
     expect(translateService.setDefaultLang).toHaveBeenCalledWith('en');
   });
 
+  it('should call Translate service method in constructor', () => {
+    localStorage.setItem('lastSelectedLang', 'es');
+    spyOn(translateService, 'setDefaultLang');
+    TestBed.createComponent(AppComponent);
+    expect(translateService.setDefaultLang).toHaveBeenCalledWith('es');
+    localStorage.removeItem('lastSelectedLang');
+  });
+
 });
