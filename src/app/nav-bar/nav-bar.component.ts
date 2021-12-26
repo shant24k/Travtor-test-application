@@ -29,6 +29,10 @@ export class NavBarComponent implements OnInit {
     this.routerEventService.subscribeToRouterEvent().subscribe((event) => {
       if (event.url) {
         this.url = event.url;
+        if (this.url.indexOf('car') === -1 && (this.selectedCar || this.getCarItineraries)) {
+          this.selectedCar = null;
+          this.getCarItineraries = null;
+        }
       }
     });
   }

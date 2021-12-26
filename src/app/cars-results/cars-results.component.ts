@@ -5,28 +5,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CarsService } from '../services/cars.service';
 import { CarAddItemAction, CarsAddItemAction } from '../store/action';
-
-export interface propertyMap {
-  price: string,
-  company: string,
-  type: string
-}
-export interface orderMap {
-  asc: boolean,
-  dsc: boolean,
-}
-export const propertyMap: propertyMap = {
-  'price': 'fare.perDay',
-  'company': 'vehicle.name',
-  'type': 'vehicle.type'
-}
-export const orderMap: orderMap =  {
-  'asc': false,
-  'dsc': true
-}
-
-export const getKeyValue = function<T extends object, U extends keyof T> (obj: T, key: U) { return obj[key] }
-
+import { propertyMap, orderMap, getKeyValue } from '../models/constants';
 
 @Component({
   selector: 'app-cars-results',

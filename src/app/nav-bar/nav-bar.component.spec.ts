@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
-// import { MockStore, getMockStore } from '@ngrx/store/testing';
 
 import { NavBarComponent } from './nav-bar.component';
 import { RouterEventService } from '../services/router-event.service';
@@ -12,8 +11,6 @@ describe('NavBarComponent', () => {
   let component: NavBarComponent;
   let fixture: ComponentFixture<NavBarComponent>;
   let routerEventService: RouterEventService
-  // let store: MockStore;
-  // const initialState = { carSearch: null, carItineraries: null };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -31,7 +28,6 @@ describe('NavBarComponent', () => {
       providers: [ RouterEventService ]
     })
     .compileComponents();
-    // store = getMockStore({ initialState });
     routerEventService = TestBed.inject(RouterEventService);
   });
 
@@ -45,10 +41,31 @@ describe('NavBarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('ngOnInit should create', () => {
+  it('ngOnInit should check the route events', () => {
     spyOn(routerEventService, 'subscribeToRouterEvent').and.returnValue(of({url: 'http://localhost:4200/car-search'}));
     component.ngOnInit();
     fixture.detectChanges();
     expect(component.url).toEqual('http://localhost:4200/car-search');
+  });
+
+  it('ngOnInit should check the route events and accordingly update local objects', () => {
+    spyOn(routerEventService, 'subscribeToRouterEvent').and.returnValue(of({url: 'http://localhost:4200/flights-search'}));
+    component.selectedCar = {
+      pickUpLocation: 'Airport',
+      pickUpDate: '2021-12-30',
+      dropOffDate: '2022-01-01',
+      pickUpTime: '09:00',
+      dropOffTime: '19:00',
+      ageOfDriver: '25+'
+    };
+    component.getCarItineraries = {
+      currency: 'USD',
+      carItinerraies: {}
+    }
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.url).toEqual('http://localhost:4200/flights-search');
+    expect(component.selectedCar).toBeFalsy();
+    expect(component.getCarItineraries).toBeFalsy();
   });
 });

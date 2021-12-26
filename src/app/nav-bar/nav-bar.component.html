@@ -16,8 +16,8 @@
 <div *ngIf="selectedCar" class="car-search">
   <div class="location-details">{{selectedCar.pickUpLocation}}</div>
   <div class="date-details">
-    <span>{{selectedCar.pickUpDate | date:'MMMM d'}}, {{selectedCar.pickUpTime}} - </span>
-    <span>{{selectedCar.dropOffDate | date:'MMMM d'}}, {{selectedCar.dropOffTime}}</span>
+    <span>{{selectedCar.pickUpDate | date:'MMM d'}}, {{selectedCar.pickUpTime | timeFormat}} - </span>
+    <span>{{selectedCar.dropOffDate | date:'MMM d'}}, {{selectedCar.dropOffTime | timeFormat}}</span>
   </div>
 </div>
 <div *ngIf="getCarItineraries?.carMockItineraries?.CarItineraries?.length">

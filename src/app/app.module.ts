@@ -23,6 +23,7 @@ import { appReducer } from './store/reducer';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TimeFormatPipe } from './pipes/time-format.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HotelsSearchComponent,
     CruisesSearchComponent,
     CarsResultsComponent,
-    OrderByPipe
+    OrderByPipe,
+    TimeFormatPipe
   ],
   imports: [
     BrowserModule,
