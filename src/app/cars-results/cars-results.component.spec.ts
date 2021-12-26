@@ -3,10 +3,10 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { CarsResultsComponent } from './cars-results.component';
 import { StoreModule, Store } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
-import { CarsService } from '../cars.service';
+import { CarsService } from '../services/cars.service';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
-import { OrderByPipe } from '../order-by.pipe';
+import { OrderByPipe } from '../pipes/order-by.pipe';
 import { of } from 'rxjs/internal/observable/of';
 import { car_list } from '../car-itineraries';
 import { TopBarComponent } from '../top-bar/top-bar.component'
