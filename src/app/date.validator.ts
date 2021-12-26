@@ -37,8 +37,8 @@ export function ValidatePickUpDropOffDate(fGroup: AbstractControl) {
     if (fGroup.get('pickUpDate')?.value ===  fGroup.get('dropOffDate')?.value && fGroup.get('pickUpTime')?.value && fGroup.get('dropOffTime')?.value) {
         let timzoneOffset = new Date().getTimezoneOffset() / 60;
         let easternHemisphere;
-        let hours = '';
-        let minutes;
+        let hours = '00';
+        let minutes = '00';
         if (timzoneOffset < 0) {
             timzoneOffset = timzoneOffset * -1;
             easternHemisphere = true;
