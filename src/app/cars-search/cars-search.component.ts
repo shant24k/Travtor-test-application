@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CarsService } from '../cars.service';
+import { CarsService } from '../services/cars.service';
 import { Router } from '@angular/router';
 import { CarAddItemAction, CarsAddItemAction } from '../store/action';
 import { Store } from '@ngrx/store';
-import { ValidateDate, ValidatePickUpDropOffDate } from '../date.validator';
+import { ValidateDate, ValidatePickUpDropOffDate } from '../validators/date.validator';
 
 @Component({
   selector: 'app-cars-search',

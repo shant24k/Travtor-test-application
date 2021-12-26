@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CarsSearchComponent } from './cars-search.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CarsService } from '../cars.service';
+import { CarsService } from '../services/cars.service';
 import { CarAddItemAction, CarsAddItemAction } from '../store/action';
 import { Store, StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';

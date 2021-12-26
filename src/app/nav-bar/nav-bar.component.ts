@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getCarSearch, getCarItineraries } from '../store/store-selector';
-import { Router, ActivatedRoute, ParamMap, NavigationEnd } from '@angular/router';
-import { RouterEventService } from '../router-event.service';
+import { Router } from '@angular/router';
+import { RouterEventService } from '../services/router-event.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',

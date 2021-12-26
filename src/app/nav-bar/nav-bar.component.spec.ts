@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 // import { MockStore, getMockStore } from '@ngrx/store/testing';
 
 import { NavBarComponent } from './nav-bar.component';
-import { RouterEventService } from '../router-event.service';
+import { RouterEventService } from '../services/router-event.service';
 import { of } from 'rxjs';
 
 describe('NavBarComponent', () => {

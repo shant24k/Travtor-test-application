@@ -18,9 +18,9 @@ import { HotelsSearchComponent } from './hotels-search/hotels-search.component';
 import { CruisesSearchComponent } from './cruises-search/cruises-search.component';
 import { CarsResultsComponent } from './cars-results/cars-results.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarsService } from './cars.service';
+import { CarsService } from './services/cars.service';
 import { appReducer } from './store/reducer';
-import { OrderByPipe } from './order-by.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 

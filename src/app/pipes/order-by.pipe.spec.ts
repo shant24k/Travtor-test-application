@@ -1,5 +1,5 @@
 import { OrderByPipe } from './order-by.pipe';
-import { car_list } from './car-itineraries';
+import { car_list } from '../car-itineraries';
 
 describe('Pipe: OrderBy', () => {
     let pipe: OrderByPipe;

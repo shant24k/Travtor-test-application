@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { RouterEventService } from './router-event.service';
-import { NavigationEnd, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Observable, ReplaySubject } from 'rxjs';
 
 describe('RouterEventService', () => {

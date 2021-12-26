@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { getCarSearch, getCarItineraries } from '../store/store-selector';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { CarsService } from '../cars.service';
+import { CarsService } from '../services/cars.service';
 import { CarAddItemAction, CarsAddItemAction } from '../store/action';
 
 export interface propertyMap {
